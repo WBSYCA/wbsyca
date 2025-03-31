@@ -1,0 +1,150 @@
+<PP-02.html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Registration (PP-02)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header, .footer {
+            background-color: darkblue;
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .header img {
+            width: 100%;
+            max-width: 530px;
+            border-radius: 5px;
+        }
+        .container {
+            width: 90%;
+            max-width: 500px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            border: 5px solid royalblue;
+            text-align: left;
+        }
+        input, button {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .home-icon {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .home-icon img {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: darkblue;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://i.postimg.cc/nr188Fzp/header.jpg" alt="Header Image">
+        <div>Modify Registration (PP-02)</div>
+    </div>
+    
+    <div class="container">
+        <label>Enter Roll No:</label>
+        <input type="text" id="searchRollNo">
+        <button onclick="searchPP02()">Search</button>
+        
+        <form id="pp02Form">
+            <label>Registration No:</label>
+            <input type="text" id="registrationNo" required>
+            <label>Applicant Name:</label>
+            <input type="text" id="applicantName" style="text-transform: uppercase;" required>
+            <label>Date of Birth:</label>
+            <input type="date" id="dob" required>
+            <label>Guardian Name:</label>
+            <input type="text" id="guardianName" style="text-transform: uppercase;" required>
+            <label>Relation:</label>
+            <input type="text" id="relation" required>
+            <label>Contact No:</label>
+            <input type="text" id="contactNo" required>
+            <label>Subject:</label>
+            <input type="text" id="subject" required>
+            <label>Centre Name:</label>
+            <input type="text" id="centreName" required>
+            <label>Centre Code:</label>
+            <input type="text" id="centreCode" required>
+            <label>Centre Address:</label>
+            <input type="text" id="centreAddress" required>
+            <label>Candidate Passport Photo:</label>
+            <input type="file" id="passportPhoto" accept="image/*" required>
+            <label>Candidate Birth Documents:</label>
+            <input type="file" id="birthDocs" accept="image/*" required>
+            <button type="submit">Submit</button>
+        </form>
+        
+        <div class="home-icon">
+            <a href="dashboard.html">
+                <img src="https://i.postimg.cc/C5T7qW4n/pngwing-com-3.png" alt="Home">
+            </a>
+        </div>
+    </div>
+    
+    <div class="footer">&copy; 2025 WBSYCA. All Rights Reserved.</div>
+
+    <script>
+        function searchPP02() {
+            let rollNo = document.getElementById("searchRollNo").value.trim();
+            if (!rollNo) {
+                alert("Please enter a Roll No.");
+                return;
+            }
+            
+            // Simulating data fetch - Replace with actual API/Google Sheets call
+            let sampleData = {
+                "12345": { "registrationNo": "98765", "applicantName": "John Doe", "dob": "2000-01-01", "guardianName": "Mr. Smith", "relation": "Father", "contactNo": "9876543210", "subject": "Yoga", "centreName": "ABC Centre", "centreCode": "A123", "centreAddress": "123 Street, City" }
+            };
+            
+            let data = sampleData[rollNo];
+            if (data) {
+                document.getElementById("registrationNo").value = data.registrationNo;
+                document.getElementById("rollNo").value = rollNo;
+                document.getElementById("applicantName").value = data.applicantName;
+                document.getElementById("dob").value = data.dob;
+                document.getElementById("guardianName").value = data.guardianName;
+                document.getElementById("relation").value = data.relation;
+                document.getElementById("contactNo").value = data.contactNo;
+                document.getElementById("subject").value = data.subject;
+                document.getElementById("centreName").value = data.centreName;
+                document.getElementById("centreCode").value = data.centreCode;
+                document.getElementById("centreAddress").value = data.centreAddress;
+            } else {
+                alert("No data found for the given Roll No.");
+            }
+        }
+    </script>
+</body>
+</html>

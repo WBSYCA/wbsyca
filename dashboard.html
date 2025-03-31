@@ -1,0 +1,52 @@
+<!-- Dashboard Page (dashboard.html) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WelCome to WBSYCA Dashboard... </title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { 
+            margin: 20px auto; 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 800px;
+        }
+        .button { 
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 210px;
+        }
+        .button:hover { background-color: #0056b3; }
+        .header {
+            background-color: royalblue;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            max-width: 100%;
+            height: auto;
+            border: thick solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://i.postimg.cc/nr188Fzp/header.jpg" alt="Header Image">
+    </div>
+    <h1>WelCome to WBSYCA Dashboard...</h1>
+    <div class="container">
+        <button class="button" onclick="location.href='pp01.html'">Student Registration (PP-01)</button>
+        <button class="button" onclick="location.href='pp02.html'">Modify Registration (PP-02)</button>
+        <button class="button" onclick="location.href='examination.html'">Student Examination</button>
+    </div>
+</body>
+</html>
